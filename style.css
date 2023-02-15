@@ -1,0 +1,365 @@
+
+/* import special styles */
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+/* global vars for color choices */
+
+:root {
+  --white: #f2f2f2;
+  --light_grey: #ededed;
+  --grey: #8a8a8a;
+  --dark_grey: #333;
+  --black: #000;
+  --primary_color: #024F0B;
+}
+
+/* general styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 0.833vw; /* 16px for viewport width = 1920px */
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: var(--dark_grey);
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+}
+
+a i, a span {
+  color: var(--dark_grey);
+}
+
+.title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: var(--primary_color);
+}
+
+/* header styles */ 
+
+header {
+  background-color: var(--primary_color);
+  background-image: url("references/hoh_river_crossing.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  height: 100vh;
+  text-align: center;
+  line-height: 1.2;
+  max-width: none;
+}
+
+.header-content {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  color: var(--white);
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+header a {
+  border: 1px solid var(--primary_color);
+  border-radius: 290486px;
+  transition: all 0.3s ease-out;
+
+  padding: 1em 2em;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+header a:hover {
+  background:  var(--primary_color);
+  color: var(--white);
+}
+
+/* logo and image styling */
+
+img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+header img {
+  display: inline-block;
+  vertical-align: top;
+
+  height: 120px;
+  width: 120px;
+}
+
+/* project portfolio styles */
+
+#portfolio-container {
+  min-height: 100vh;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#portfolio-grid {
+  aspect-ratio: 2 / 1;
+  width: 70vw;
+  margin: 1.25em auto 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.project {
+  background-image: url("references/hoh_river_crossing.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  aspect-ratio: 4 / 3;
+  position: relative;
+  margin: 10px;
+  border-radius: 5%;
+  color: var(--white);
+  text-align: center;
+}
+
+#pitt {
+  background-image: url("references/downtown_pittsburgh.jpg");
+}
+
+#traders {
+  background-image: url("references/work_table.jpg");
+}
+
+#red-wine {
+  background-image: url("references/red_wine.jpg");
+}
+
+#front-end {
+  background-image: url("references/front-end.jpg");
+}
+
+.project h1, .project p, .project a, .project i {
+  margin: 0;
+  padding: 0;
+}
+
+.project h1 {
+  padding: 0.25em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.project p {
+  padding: 0.25em 1em;
+}
+
+.project-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background-color: var(--primary_color);
+
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.project:hover .project-info {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project:hover .project-title {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.project-info a {
+  border: 1px solid var(--dark_grey);
+  border-radius: 290486px;
+  transition: all 0.3s ease-out;
+
+  padding: 0.75em 1.75em;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  background: var(--dark_grey);
+  color: var(--white);
+}
+
+.project-info i, .project-info span {
+  color: var(--white);
+}
+
+.project-info a:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--dark_grey);
+}
+
+.project-info a:hover i, .project-info a:hover span {
+  color: var(--dark_grey);
+}
+
+/* personal section / footer */
+
+.personal-section {
+  min-height: 100vh;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nav bar for the personal info section */
+
+.nav-bar {
+  position: absolute;
+  top: 200%;
+  left: 0%;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  background: var(--dark_grey);
+}
+
+.nav-link-container {
+  height: 1.875em;
+  padding: 0.625em 0; /* 10px 0px equivalent */
+  width: 50em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-links {
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+
+  margin: 0 1.25em;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+.nav-link img {
+  height: 100%;
+  width: 100%;
+  color: var(--white);
+}
+
+.nav-link a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link i {
+  color: var(--white);
+}
+
+.nav-link .fa {
+  vertical-align: -2em;
+}
+
+/* personal info */
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+  max-width: 50em;
+  line-height: 1.5;
+}
+
+.personal-desc {
+  margin: 0;
+}
+
+/* redirect links */
+
+.redirect-links {
+  width: 100%;
+  margin-top: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redirect-links a {
+  border: 1px solid var(--primary_color);
+  border-radius: 290486px;
+  transition: all 0.3s ease-out;
+
+  padding: 0.75em 1.75em;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  color: var(--white);
+}
+
+.redirect-links a:hover {
+  background: var(--primary_color);
+  color: var(--white);
+}
+
+.redirect-links a:hover i, .redirect-links a:hover span {
+  color: var(--white);
+}
